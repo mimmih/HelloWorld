@@ -1,0 +1,11 @@
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+apply plugin: 'java'
+
+task(runMain, dependsOn: 'classes', type: JavaExec) {
+	main = 'com.codetutr.HelloWorld'
+	classpath = sourceSets.main.runtimeClasspath
+	args 'CodeTutr'
+}
